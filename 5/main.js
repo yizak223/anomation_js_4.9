@@ -1,14 +1,18 @@
 t5.addEventListener('click',changeInteval)
 
 
-var red
-var green
-var blue
+var changeCOLOR=false
 
-
-
+var changeColorInterval
 function changeInteval() {
-    setInterval(changeColor,100)
+    if (changeCOLOR==false) {
+        changeColorInterval=setInterval(changeColor,100) 
+        changeCOLOR=true
+    }
+    else{
+        clearInterval(changeColorInterval)
+        changeCOLOR=false
+    }
 }
 
 function changeColor() {
